@@ -1,4 +1,4 @@
-## Resume Analyzer
+# Resume Analyzer
 
 This project is an AI-powered ATS (Applicant Tracking System) evaluation and resume enhancement platform that analyzes resumes and job descriptions using NLP and transformer-based semantic embeddings.
 
