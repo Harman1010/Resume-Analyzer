@@ -4,7 +4,7 @@ This project is an AI-powered ATS (Applicant Tracking System) evaluation and res
 
 The system computes ATS compatibility scores dynamically by combining semantic similarity, skill-level matching, keyword analysis, and critical requirement evaluation. It also identifies missing skills and generates resume improvement suggestions to help candidates improve job-role alignment.
 
-##Working
+# Working
 
 The project follows a hybrid NLP pipeline architecture.
 
@@ -20,7 +20,7 @@ The project follows a hybrid NLP pipeline architecture.
 
 • Missing skills and weak alignment areas are analyzed to generate rule-guided resume improvement suggestions.
 
-##Tech Stack
+# Tech Stack
 
 • Python
 • Sentence Transformers
