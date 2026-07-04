@@ -4,37 +4,16 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 from config.settings import LLM_MODEL
-from config.prompts import JD_EXTRACTION_PROMPT
+from config.prompts import jd_prompt
 from schemas.jd_schema import JDSchema
 
-
-# Load environment variables
 load_dotenv()
 
+llm = ChatGoogleGenerativeAI(model=LLM_MODEL,temperature=0)
 
-# Initialize Gemini
-llm = ChatGoogleGenerativeAI(
-    model=LLM_MODEL,
-    temperature=0
-)
-
-
-# Enforce structured output
 structured_llm = llm.with_structured_output(JDSchema)
 
-
-# Prompt Template
-prompt = ChatPromptTemplate.from_messages(
-    [
-        ("system", JD_EXTRACTION_PROMPT),
-        ("human", "{job_description}")
-    ]
-)
-
-
-# Create LangChain pipeline
-jd_extraction_chain = prompt | structured_llm
-
+jd_extraction_chain = jd_prompt | structured_llm
 
 def extract_jd_information(job_description: str) -> JDSchema:
     """

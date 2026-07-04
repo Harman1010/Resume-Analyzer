@@ -1,0 +1,68 @@
+AI Engineer (Fresher)
+
+Location: Bengaluru, India
+
+Job Type: Full-Time
+
+About the Role
+
+We are looking for a passionate AI Engineer to join our engineering team. You will work on building AI-powered applications, integrating Large Language Models (LLMs), developing backend APIs, and deploying machine learning solutions. This role is ideal for recent graduates who enjoy solving real-world problems using AI technologies.
+
+Responsibilities
+
+- Build and maintain AI-powered applications using Python.
+- Develop backend REST APIs using FastAPI.
+- Build Retrieval-Augmented Generation (RAG) pipelines.
+- Work with Large Language Models (LLMs) and prompt engineering.
+- Develop applications using LangChain and LangGraph.
+- Implement semantic search using vector databases.
+- Write clean, modular, and maintainable Python code.
+- Collaborate with cross-functional engineering teams.
+- Debug, test, and optimize AI applications.
+- Use Git for version control.
+
+Required Skills
+
+- Python
+- FastAPI
+- Machine Learning
+- Deep Learning
+- Natural Language Processing (NLP)
+- Large Language Models (LLMs)
+- LangChain
+- LangGraph
+- Prompt Engineering
+- Retrieval-Augmented Generation (RAG)
+- Vector Databases
+- FAISS
+- Hugging Face Transformers
+- Sentence Transformers
+- Git
+- REST APIs
+- SQL
+- Object-Oriented Programming
+- Data Structures and Algorithms
+
+Preferred Skills
+
+- Docker
+- PostgreSQL
+- ChromaDB
+- Qdrant
+- Pinecone
+- Streamlit
+- Gradio
+- AWS
+- Azure
+- CI/CD
+- Unit Testing
+- Linux
+- Bash
+- MongoDB
+
+Qualifications
+
+- Bachelor's degree in Computer Science, Artificial Intelligence, Information Technology, or a related field.
+- Strong understanding of machine learning fundamentals.
+- Good problem-solving and communication skills.
+- Internship or academic project experience in AI or Machine Learning is a plus.
