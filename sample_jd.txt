@@ -1,68 +1,34 @@
-AI Engineer (Fresher)
+We are looking for a passionate and motivated AI Engineer (Fresher) to join our AI team. This role is ideal for recent graduates or candidates with internship/project experience in Artificial Intelligence, Machine Learning, or Generative AI. You will work alongside experienced engineers to build, test, and deploy AI-powered applications while learning industry best practices.
 
-Location: Bengaluru, India
+Key Responsibilities
+Develop and maintain AI/ML models for real-world applications.
+Build and integrate Generative AI solutions using Large Language Models (LLMs).
+Create and optimize prompts for AI applications.
+Work with Python to build data pipelines and AI services.
+Assist in data preprocessing, feature engineering, and model evaluation.
+Develop REST APIs for AI models.
+Collaborate with software engineers, product teams, and data scientists.
+Perform model testing, debugging, and performance optimization.
+Document code, experiments, and technical solutions.
+Stay updated with the latest AI research and emerging technologies.
 
-Job Type: Full-Time
-
-About the Role
-
-We are looking for a passionate AI Engineer to join our engineering team. You will work on building AI-powered applications, integrating Large Language Models (LLMs), developing backend APIs, and deploying machine learning solutions. This role is ideal for recent graduates who enjoy solving real-world problems using AI technologies.
-
-Responsibilities
-
-- Build and maintain AI-powered applications using Python.
-- Develop backend REST APIs using FastAPI.
-- Build Retrieval-Augmented Generation (RAG) pipelines.
-- Work with Large Language Models (LLMs) and prompt engineering.
-- Develop applications using LangChain and LangGraph.
-- Implement semantic search using vector databases.
-- Write clean, modular, and maintainable Python code.
-- Collaborate with cross-functional engineering teams.
-- Debug, test, and optimize AI applications.
-- Use Git for version control.
-
-Required Skills
-
-- Python
-- FastAPI
-- Machine Learning
-- Deep Learning
-- Natural Language Processing (NLP)
-- Large Language Models (LLMs)
-- LangChain
-- LangGraph
-- Prompt Engineering
-- Retrieval-Augmented Generation (RAG)
-- Vector Databases
-- FAISS
-- Hugging Face Transformers
-- Sentence Transformers
-- Git
-- REST APIs
-- SQL
-- Object-Oriented Programming
-- Data Structures and Algorithms
+Required Qualifications
+Bachelor's degree in Computer Science, Artificial Intelligence, Data Science, Information Technology, or a related field.
+Strong understanding of Python programming.
+Basic knowledge of Machine Learning concepts and algorithms.
+Familiarity with Deep Learning frameworks such as TensorFlow or PyTorch.
+Understanding of Generative AI and Large Language Models.
+Knowledge of SQL and databases.
+Basic understanding of Git and version control.
+Good problem-solving and analytical skills.
+Strong communication and teamwork abilities.
 
 Preferred Skills
-
-- Docker
-- PostgreSQL
-- ChromaDB
-- Qdrant
-- Pinecone
-- Streamlit
-- Gradio
-- AWS
-- Azure
-- CI/CD
-- Unit Testing
-- Linux
-- Bash
-- MongoDB
-
-Qualifications
-
-- Bachelor's degree in Computer Science, Artificial Intelligence, Information Technology, or a related field.
-- Strong understanding of machine learning fundamentals.
-- Good problem-solving and communication skills.
-- Internship or academic project experience in AI or Machine Learning is a plus.
+Experience with LangChain, LlamaIndex, or similar AI frameworks.
+Familiarity with OpenAI, Anthropic, Gemini, or open-source LLMs.
+Knowledge of Retrieval-Augmented Generation (RAG).
+Basic understanding of vector databases (e.g., Pinecone, Chroma, FAISS, or Milvus).
+Experience with FastAPI or Flask.
+Exposure to cloud platforms (AWS, Azure, or Google Cloud).
+Understanding of Docker and basic CI/CD concepts.
+Participation in hackathons, internships, or open-source projects.

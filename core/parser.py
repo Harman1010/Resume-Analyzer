@@ -1,20 +1,21 @@
+from typing import BinaryIO
 import pdfplumber
 
-def read_pdf(file_input):
+
+def read_pdf(file: BinaryIO) -> str:
+    """
+    Extract text from a PDF file.
+    """
+
     text = ""
-    try:
-        if file_input is None:
-            return ""
 
-        # Works for both file path and Gradio file object
-        pdf = pdfplumber.open(file_input)
+    with pdfplumber.open(file) as pdf:
 
-        with pdf:
-            for page in pdf.pages:
-                text += page.extract_text() or ""
+        for page in pdf.pages:
 
-    except Exception as e:
-        print("PDF ERROR:", e)
-        return ""
+            page_text = page.extract_text()
+
+            if page_text:
+                text += page_text + "\n"
 
     return text

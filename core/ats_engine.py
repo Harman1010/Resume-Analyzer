@@ -1,5 +1,3 @@
-from core.parser import read_pdf
-
 from core.jd_extractor import extract_jd_information
 from core.skill_extractor import extract_resume_skills
 
@@ -11,9 +9,7 @@ from schemas.ats_schema import ATSResult
 
 class ATSEngine:
 
-    def analyze(self,resume_path: str,job_description: str):
-
-        resume_text = read_pdf(resume_path)
+    def analyze(self,resume_text : str,job_description: str):
 
         resume_skills = extract_resume_skills(resume_text)
 

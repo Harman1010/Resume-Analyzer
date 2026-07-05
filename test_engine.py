@@ -1,18 +1,22 @@
 from core.ats_engine import ATSEngine
 
+from core.parser import read_pdf
 
 def main():
-
-    resume_path = "HarmanSingh_Resume.pdf"
+    
     jd_path = "sample_jd.txt"
 
     with open(jd_path, "r", encoding="utf-8") as file:
         job_description = file.read()
 
+    with open("HarmanSingh_Resume.pdf", "rb") as file:
+
+        resume_text = read_pdf(file)
+
     engine = ATSEngine()
 
     result = engine.analyze(
-        resume_path=resume_path,
+        resume_path=resume_text,
         job_description=job_description
     )
 

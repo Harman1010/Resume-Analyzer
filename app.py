@@ -1,3 +1,7 @@
-from ui.gradio import demo
+from fastapi import FastAPI
 
-demo.launch()
+from api.routes import router
+
+app = FastAPI()
+
+app.include_router(router)
