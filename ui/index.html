@@ -2,19 +2,127 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>AI Resume Optimization</title>
-    <link>
-    <rel="style.css"> </rel>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
+    <div class="container">
 
-    <script>
-        <src = "javascript.js">
-    </script>
+        <h1>AI Resume Optimization</h1>
+
+        <p class="subtitle">
+            Upload your resume and compare it with a job description.
+        </p>
+
+        <div class="card">
+
+            <label for="resume">
+                Resume (PDF)
+            </label>
+
+            <input type="file" id="resume" accept=".pdf">
+
+        </div>
+
+        <div class="card">
+
+            <label for="jd">
+                Job Description
+            </label>
+
+            <textarea id="jd" rows="12" placeholder="Paste the job description here..."></textarea>
+
+        </div>
+
+        <button id="analyzeBtn">
+
+            Analyze Resume
+
+        </button>
+
+        <div id="loading">
+
+            Analyzing Resume...
+
+        </div>
+
+        <div id="results">
+
+            <h2>ATS Analysis</h2>
+
+            <div class="scoreCard">
+
+                <h3>ATS Score</h3>
+
+                <p id="score">--</p>
+
+            </div>
+
+            <div class="coverage">
+
+                <p>
+                    Required Coverage:
+                    <span id="requiredCoverage"></span>
+                </p>
+
+                <p>
+                    Preferred Coverage:
+                    <span id="preferredCoverage"></span>
+                </p>
+
+            </div>
+
+            <div class="skills">
+
+                <div>
+
+                    <h3>Matched Required Skills</h3>
+
+                    <ul id="matchedRequired"></ul>
+
+                </div>
+
+                <div>
+
+                    <h3>Missing Required Skills</h3>
+
+                    <ul id="missingRequired"></ul>
+
+                </div>
+
+                <div>
+
+                    <h3>Matched Preferred Skills</h3>
+
+                    <ul id="matchedPreferred"></ul>
+
+                </div>
+
+                <div>
+
+                    <h3>Missing Preferred Skills</h3>
+
+                    <ul id="missingPreferred"></ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>
