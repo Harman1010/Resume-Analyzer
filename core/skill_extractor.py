@@ -24,6 +24,7 @@ def extract_resume_skills(
 ) -> list[str]:
     """
     Extract technical skills from the resume using Gemini.
+    
     """
 
     response = chain.invoke(
