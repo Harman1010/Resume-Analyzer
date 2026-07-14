@@ -2,6 +2,8 @@ from fastapi import APIRouter,Form,UploadFile,File
 
 from core.ats_engine import ATSEngine
 
+from core.optimization_engine import ResumeAnalyzer
+
 from core.parser import read_pdf
 
 router = APIRouter()
@@ -16,7 +18,9 @@ async def analyze(resume: UploadFile = File(...),job_description: str = Form(...
 
     resume_text = read_pdf(resume.file)
 
-    engine = ATSEngine()
+    #engine = ATSEngine()
+
+    engine = ResumeAnalyzer()
 
     result = engine.analyze(resume_text=resume_text,job_description=job_description)
 
