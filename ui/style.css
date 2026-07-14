@@ -231,3 +231,84 @@ li {
     }
 
 }
+
+#optimizationSection {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    margin-top: 30px;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+#optimizationSection h2 {
+
+    color: #1e3a8a;
+
+    margin-bottom: 10px;
+}
+
+.advisorText {
+
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+#showOptimizationBtn {
+
+    width: auto;
+
+    padding: 12px 24px;
+
+    margin-bottom: 20px;
+}
+
+#optimizationResults {
+
+    margin-top: 20px;
+}
+
+#optimizationResults .card {
+
+    margin-bottom: 20px;
+}
+
+#optimizationResults h3 {
+
+    color: #2563eb;
+
+    margin-bottom: 15px;
+}
+
+#optimizationResults ul {
+
+    padding-left: 20px;
+}
+
+#optimizationResults li {
+
+    margin-bottom: 10px;
+
+    line-height: 1.5;
+}
+
+#summary {
+
+    line-height: 1.7;
+
+    color: #444;
+}
+
+hr {
+
+    border: none;
+
+    border-top: 1px solid #ddd;
+
+    margin: 35px 0;
+}

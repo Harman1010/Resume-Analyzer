@@ -22,6 +22,16 @@ const matchedPreferred = document.getElementById("matchedPreferred");
 
 const missingPreferred = document.getElementById("missingPreferred");
 
+const showOptimizationBtn = document.getElementById("showOptimizationBtn");
+
+const optimizationResults = document.getElementById("optimizationResults");
+
+const skillsToHighlight = document.getElementById("skillsToHighlight");
+
+const recommendations = document.getElementById("recommendations");
+
+const summary = document.getElementById("summary");
+
 
 analyzeBtn.addEventListener("click", analyzeResume);
 
@@ -45,6 +55,10 @@ async function analyzeResume() {
     loading.style.display = "block";
 
     results.style.display = "none";
+
+    optimizationResults.style.display = "none";
+
+    showOptimizationBtn.innerText = "View Suggestions";
 
 
     const formData = new FormData();
@@ -77,15 +91,15 @@ async function analyzeResume() {
 
 
         score.innerText =
-            data.ats_score.toFixed(2);
+            data.ats.ats_score.toFixed(2);
 
 
         requiredCoverage.innerText =
-            (data.required_skill_coverage * 100).toFixed(2) + "%";
+            (data.ats.required_skill_coverage * 100).toFixed(2) + "%";
 
 
         preferredCoverage.innerText =
-            (data.preferred_skill_coverage * 100).toFixed(2) + "%";
+            (data.ats.preferred_skill_coverage * 100).toFixed(2) + "%";
 
 
         matchedRequired.innerHTML = "";
@@ -97,7 +111,7 @@ async function analyzeResume() {
         missingPreferred.innerHTML = "";
 
 
-        data.matched_required.forEach(skill => {
+        data.ats.matched_required.forEach(skill => {
 
             const li = document.createElement("li");
 
@@ -107,7 +121,7 @@ async function analyzeResume() {
 
         });
 
-        data.matched_preferred.forEach(skill => {
+        data.ats.matched_preferred.forEach(skill => {
 
             const li = document.createElement("li");
 
@@ -118,7 +132,7 @@ async function analyzeResume() {
         });
 
 
-        data.missing_required.forEach(skill => {
+        data.ats.missing_required.forEach(skill => {
 
             const li = document.createElement("li");
 
@@ -128,7 +142,7 @@ async function analyzeResume() {
 
         });
 
-        data.missing_preferred.forEach(skill => {
+        data.ats.missing_preferred.forEach(skill => {
 
             const li = document.createElement("li");
 
@@ -138,6 +152,31 @@ async function analyzeResume() {
 
         });
 
+        skillsToHighlight.innerHTML = "";
+        recommendations.innerHTML = "";
+
+        data.optimization.existing_skills_to_highlight.forEach(skill => {
+
+            const li = document.createElement("li");
+
+            li.innerText = "✓ " + skill;
+
+            skillsToHighlight.appendChild(li);
+
+        });
+
+        data.optimization.recommendations.forEach(item => {
+
+            const li = document.createElement("li");
+
+            li.innerText = item;
+
+            recommendations.appendChild(li);
+
+        });
+
+        summary.innerText =
+            data.optimization.summary;
 
         results.style.display = "block";
 
@@ -156,3 +195,25 @@ async function analyzeResume() {
     }
 
 }
+
+showOptimizationBtn.addEventListener("click", () => {
+
+    if (optimizationResults.style.display === "none") {
+
+        optimizationResults.style.display = "block";
+
+        showOptimizationBtn.innerText =
+            "Hide Suggestions";
+
+    }
+
+    else {
+
+        optimizationResults.style.display = "none";
+
+        showOptimizationBtn.innerText =
+            "View Suggestions";
+
+    }
+
+});
