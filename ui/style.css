@@ -312,3 +312,51 @@ hr {
 
     margin: 35px 0;
 }
+
+#resumeSection {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin-top: 20px;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+
+}
+
+#resumeSection h3 {
+
+    color: #1e3a8a;
+
+    margin-bottom: 12px;
+
+}
+
+#generateResumeBtn {
+
+    width: auto;
+
+    padding: 12px 24px;
+
+    margin-top: 15px;
+
+}
+
+#generateResumeBtn:disabled {
+
+    background: #9ca3af;
+
+    cursor: not-allowed;
+
+}
+
+#generateResumeBtn:hover:not(:disabled) {
+
+    background: #1d4ed8;
+
+}

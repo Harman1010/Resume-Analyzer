@@ -5,6 +5,7 @@ import pdfplumber
 def read_pdf(file: BinaryIO) -> str:
     """
     Extract text from a PDF file.
+    
     """
 
     text = ""

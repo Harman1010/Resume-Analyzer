@@ -1,5 +1,7 @@
 from fastapi import APIRouter,Form,UploadFile,File
 
+from fastapi.responses import FileResponse
+
 from core.ats_engine import ATSEngine
 
 from core.optimization_engine import ResumeAnalyzer
@@ -43,7 +45,11 @@ async def rewrite(resume: UploadFile = File(...),job_description: str = Form(...
 
     rewriter = ResumeRewriter()
 
-    rewritten_resume = rewriter.rewrite(resume_text=resume_text,ats_result=analysis.ats,optimization=analysis.optimization)
+    file_path = rewriter.rewrite(resume_text=resume_text,ats_result=analysis.ats,optimization=analysis.optimization)
 
-    return rewritten_resume.model_dump()
+    return FileResponse(
+        path=file_path,
+        filename="ATS_Optimized_Resume.docx",
+        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    )
 

@@ -4,6 +4,8 @@ from schemas.optimization_schema import OptimizationSchema
 
 from agents.rewrite_agent import get_rewritten_resume
 
+from utils.resume_generator import get_resume
+
 class ResumeRewriter:
 
     def rewrite(
@@ -19,4 +21,6 @@ class ResumeRewriter:
             optimization
         )
 
-        return rewrite
+        file_path = get_resume(rewrite)
+
+        return file_path

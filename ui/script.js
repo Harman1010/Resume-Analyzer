@@ -32,6 +32,8 @@ const recommendations = document.getElementById("recommendations");
 
 const summary = document.getElementById("summary");
 
+const generateResumeBtn = document.getElementById("generateResumeBtn");
+
 
 analyzeBtn.addEventListener("click", analyzeResume);
 
@@ -217,3 +219,100 @@ showOptimizationBtn.addEventListener("click", () => {
     }
 
 });
+
+generateResumeBtn.addEventListener(
+    "click",
+    generateResume
+);
+
+async function generateResume() {
+
+    if (resumeInput.files.length === 0) {
+
+        alert("Please upload a resume.");
+
+        return;
+
+    }
+
+    generateResumeBtn.disabled = true;
+
+    generateResumeBtn.innerText =
+        "Generating Resume...";
+
+    const formData = new FormData();
+
+    formData.append(
+        "resume",
+        resumeInput.files[0]
+    );
+
+    formData.append(
+        "job_description",
+        jdInput.value
+    );
+
+    try {
+
+        const response = await fetch(
+
+            "http://127.0.0.1:8000/rewrite",
+
+            {
+
+                method: "POST",
+
+                body: formData
+
+            }
+
+        );
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Resume generation failed."
+            );
+
+        }
+
+        const blob =
+            await response.blob();
+
+        const url =
+            window.URL.createObjectURL(blob);
+
+        const a =
+            document.createElement("a");
+
+        a.href = url;
+
+        a.download =
+            "ATS_Optimized_Resume.docx";
+
+        document.body.appendChild(a);
+
+        a.click();
+
+        a.remove();
+
+        window.URL.revokeObjectURL(url);
+
+    }
+
+    catch (error) {
+
+        alert(error.message);
+
+    }
+
+    finally {
+
+        generateResumeBtn.disabled = false;
+
+        generateResumeBtn.innerText =
+            "Generate ATS Optimized Resume";
+
+    }
+
+}
