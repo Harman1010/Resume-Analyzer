@@ -76,7 +76,7 @@ async function analyzeResume() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:8000/analyze",
+            "https://resume-optimizer.duckdns.org/analyze",
             {
                 method: "POST",
 
@@ -256,7 +256,7 @@ async function generateResume() {
 
         const response = await fetch(
 
-            "http://127.0.0.1:8000/rewrite",
+            "https://resume-optimizer.duckdns.org/rewrite",
 
             {
 
