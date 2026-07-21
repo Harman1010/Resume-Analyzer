@@ -44,7 +44,14 @@ def get_resume(rewriten_resume : RewriteSchema,output_path: str = "output/ATS_Op
     for achievements in rewriten_resume.achievements:
         document.add_paragraph(achievements,style="List Bullet")
 
+    print("cwd:", os.getcwd())
+    print("output_path:", output_path)
+    print("dirname:", os.path.dirname(output_path))
+
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    print("Exists:", os.path.exists(os.path.dirname(output_path)))
+    print("Absolute:", os.path.abspath(output_path))
 
     document.save(output_path)
 
