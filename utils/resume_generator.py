@@ -1,3 +1,5 @@
+import os
+
 from docx import Document
 
 from docx.shared import Pt
@@ -41,6 +43,8 @@ def get_resume(rewriten_resume : RewriteSchema,output_path: str = "output/ATS_Op
 
     for achievements in rewriten_resume.achievements:
         document.add_paragraph(achievements,style="List Bullet")
+
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
     document.save(output_path)
 
