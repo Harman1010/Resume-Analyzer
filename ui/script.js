@@ -1,3 +1,5 @@
+const analysisData = null;
+
 const resumeInput = document.getElementById("resume");
 
 const jdInput = document.getElementById("jd");
@@ -90,6 +92,8 @@ async function analyzeResume() {
         }
 
         const data = await response.json();
+
+        analysisData = data;
 
 
         score.innerText =
@@ -248,8 +252,13 @@ async function generateResume() {
     );
 
     formData.append(
-        "job_description",
-        jdInput.value
+        "ats_result",
+        JSON.stringify(analysisData.ats)
+    );
+
+    formData.append(
+        "optimization",
+        JSON.stringify(analysisData.optimization)
     );
 
     try {

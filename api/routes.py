@@ -1,3 +1,5 @@
+import json
+
 from fastapi import APIRouter,Form,UploadFile,File
 
 from fastapi.responses import FileResponse
@@ -35,17 +37,22 @@ async def analyze(resume: UploadFile = File(...),job_description: str = Form(...
     return result.model_dump()
 
 @router.post("/rewrite")
-async def rewrite(resume: UploadFile = File(...),job_description: str = Form(...)):
+async def rewrite(resume: UploadFile = File(...),ats_result : str = Form(...),optimization: str = Form(...)):
 
     resume_text = read_pdf(resume.file)
 
-    analyzer = ResumeAnalyzer()
-
-    analysis = analyzer.analyze(resume_text=resume_text,job_description=job_description)
+    ats = ATSResult.model_validate(json.loads(ats_result))
+    optimization = OptimizationSchema.model_validate(
+        json.loads(optimization)
+    )
 
     rewriter = ResumeRewriter()
 
-    file_path = rewriter.rewrite(resume_text=resume_text,ats_result=analysis.ats,optimization=analysis.optimization)
+    file_path = rewriter.rewrite(
+        resume_text=resume_text,
+        ats_result=ats,
+        optimization=optimization
+    )
 
     return FileResponse(
         path=file_path,
